@@ -19,6 +19,13 @@ const rarityColors = {
   legendary: 'from-[#F97316] to-yellow-600',
 };
 
+const rarityLabels = {
+  common: 'Обычный',
+  rare: 'Редкий',
+  epic: 'Эпический',
+  legendary: 'Легендарный',
+};
+
 const CaseItem: React.FC<CaseItemProps> = ({ name, image, price, rarity, onClick }) => {
   return (
     <Card className="overflow-hidden bg-[#262A36] border-0 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#9b87f5]/20 cursor-pointer">
@@ -39,7 +46,7 @@ const CaseItem: React.FC<CaseItemProps> = ({ name, image, price, rarity, onClick
           rarity === 'epic' ? 'bg-purple-500' :
           'bg-[#F97316]'
         )}>
-          {rarity.charAt(0).toUpperCase() + rarity.slice(1)}
+          {rarityLabels[rarity]}
         </div>
       </div>
       <div className="p-4 bg-[#1A1F2C]">
